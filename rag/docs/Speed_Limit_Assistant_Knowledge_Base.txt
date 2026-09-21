@@ -1,0 +1,54 @@
+# Speed Limit Assistant
+
+## Principle and General Information
+The Speed Limit Assistant supports driving at the detected speed limit by suggesting a speed value that can be applied to the vehicle's assistance systems. This functionality applies to:
+- Manual Speed Limiter.
+- Cruise Control.
+- Active Cruise Control with Stop&Go function (ACC).
+
+The system suggests a new desired speed based on detected changes in speed limits (e.g., from Speed Limit Info). To apply the suggested value, the corresponding driving system must be active.
+
+## Safety Information
+- Driver Responsibility: The system is not a substitute for personal judgment. It cannot independently react to all traffic situations.
+- Manual Intervention: Always adjust driving style to traffic conditions. The set speed can be incorrectly adjusted; the driver must be prepared to intervene or manually adjust the speed at all times.
+
+## Controls and Settings
+
+### Steering Wheel Buttons
+- SET Button: Accept the suggested speed manually.
+- Rocker Switch: Manually set or adjust the speed (refer to Cruise Control functions).
+
+### System Activation
+To turn the system on/off or configure settings, navigate through the vehicle menu:
+1. "CAR"
+2. "Settings"
+3. "Driver Assistance"
+4. "Driving" (if necessary)
+5. "Speed Limit Assistance"
+6. "Speed limits"
+
+## Operating Modes
+- Adjust manually: Detected speed limits must be confirmed via the SET button to be applied.
+- Show anticipation: Current and upcoming speed limits are displayed in the instrument cluster but not applied.
+- Show current limit: Only the current speed limit is displayed.
+- Off: Deactivates both Speed Limit Info and Speed Limit Assistant.
+
+## Instrument Cluster Displays
+Specific icons indicate the system status:
+- Green Indicator Light + Cruise Control Icon: Speed Limit Assistant is active; detected limits can be applied manually.
+- SET Icon: Appears when a change in the speed limit is detected. Pressing the SET button applies the speed.
+- Green Checkmark: Displayed briefly after a suggested speed has been successfully applied.
+
+## Manual Adoption
+A detected speed limit can be applied manually for the active driver assistance system. When the SET icon illuminates in the instrument cluster, press the SET button on the steering wheel to update the vehicle speed.
+
+## Adapt to Route
+The system can be configured to automatically adapt the vehicle speed based on the upcoming route.
+- Situations: The vehicle may reduce speed before turns, roundabouts, or curves.
+- Configuration: Navigate to: "CAR" > "Settings" > "Driver Assistance" > "Driving" > "Speed Limit Assistance" > "Adjust to route" or "Automatically adjust speed to route".
+
+## System Limits
+- Dependencies: Speed Limit Assistant relies on the Speed Limit Info system and onboard sensors.
+- ACC Requirement: Upcoming speed limits can only be applied when Active Cruise Control (ACC) is active.
+- Navigation Reliability: The system may have limited functionality if the navigation system cannot clearly identify the vehicle's position or if map data is outdated.
+- Sensor Limits: Functionality depends on the physical limits of the vehicle's cameras and sensors.

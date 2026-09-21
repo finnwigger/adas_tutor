@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Human review — judge spot-check</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --panel: #fff; --border: #d8dce2; --ink: #1c2128;
+    --muted: #5b6573; --accent: #2563eb; --warn: #b45309; --bad: #b91c1c; --ok: #15803d;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 14px/1.5 system-ui, sans-serif; color: var(--ink); background: var(--bg); }
+  header { display: flex; align-items: baseline; gap: 16px; padding: 10px 16px; background: var(--panel); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 5; flex-wrap: wrap; }
+  header h1 { font-size: 15px; margin: 0; }
+  header .meta { color: var(--muted); font-size: 12px; }
+  header .agreement { margin-left: auto; color: var(--muted); font-size: 12px; }
+  .layout { display: grid; grid-template-columns: 240px 1fr; height: calc(100vh - 47px); }
+  /* sidebar */
+  aside { border-right: 1px solid var(--border); background: var(--panel); overflow-y: auto; }
+  aside .controls { padding: 8px 10px; border-bottom: 1px solid var(--border); display: flex; gap: 8px; align-items: center; font-size: 12px; }
+  .item { padding: 7px 10px; border-bottom: 1px solid #eef0f3; cursor: pointer; font-size: 12px; display: flex; gap: 8px; align-items: center; }
+  .item:hover { background: #f0f4ff; }
+  .item.active { background: #e0e9ff; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; background: #cbd2db; }
+  .dot.done { background: var(--ok); }
+  .item .q { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--muted); }
+  /* main */
+  main { overflow-y: auto; padding: 16px 20px 60px; }
+  .qline { font-size: 16px; font-weight: 600; margin: 0 0 4px; }
+  .sub { color: var(--muted); font-size: 12px; margin-bottom: 14px; }
+  .sub .tag { display: inline-block; background: #eef0f3; border-radius: 4px; padding: 1px 6px; margin-right: 6px; }
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .pane { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; display: flex; flex-direction: column; max-height: 60vh; }
+  .pane h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin: 0; padding: 8px 12px; border-bottom: 1px solid var(--border); }
+  .pane .body { padding: 12px; overflow-y: auto; white-space: pre-wrap; word-break: break-word; }
+  .srclabels { padding: 8px 12px; border-bottom: 1px solid var(--border); font-size: 12px; color: var(--muted); }
+  .srclabels code { background: #eef0f3; border-radius: 3px; padding: 0 4px; }
+  /* judge + form */
+  .judge { margin-top: 16px; background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 12px; }
+  .judge h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin: 0 0 8px; }
+  .judge .scores span { display: inline-block; margin-right: 14px; }
+  .halluc { margin-top: 8px; }
+  .halluc ul { margin: 4px 0 0; padding-left: 18px; }
+  .halluc li { color: var(--bad); }
+  .none { color: var(--ok); }
+  form.score { margin-top: 16px; background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 14px; }
+  form.score h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin: 0 0 10px; }
+  .metrics { display: flex; gap: 22px; flex-wrap: wrap; }
+  .metric label { display: block; font-weight: 600; margin-bottom: 4px; font-size: 13px; }
+  .radios { display: flex; gap: 4px; }
+  .radios label { font-weight: 400; cursor: pointer; border: 1px solid var(--border); border-radius: 5px; padding: 4px 9px; user-select: none; }
+  .radios input { display: none; }
+  .radios input:checked + span { font-weight: 700; }
+  .radios label:has(input:checked) { border-color: var(--accent); background: #e0e9ff; }
+  .field { margin-top: 12px; }
+  .field label { display: block; font-weight: 600; margin-bottom: 4px; font-size: 13px; }
+  .field textarea, .field input { width: 100%; font: inherit; padding: 6px 8px; border: 1px solid var(--border); border-radius: 5px; }
+  .field textarea { min-height: 52px; resize: vertical; }
+  .actions { margin-top: 14px; display: flex; gap: 10px; align-items: center; }
+  button { font: inherit; font-weight: 600; cursor: pointer; border: 1px solid var(--accent); background: var(--accent); color: #fff; border-radius: 6px; padding: 8px 16px; }
+  button.secondary { background: #fff; color: var(--ink); border-color: var(--border); }
+  .status { color: var(--muted); font-size: 12px; }
+  .reviewerline { font-size: 12px; color: var(--muted); }
+  .reviewerline input { width: 140px; }
+  .empty { padding: 40px; text-align: center; color: var(--muted); }
+</style>
+</head>
+<body>
+<header>
+  <h1>Judge spot-check</h1>
+  <span class="meta" id="meta"></span>
+  <span class="agreement" id="agreement"></span>
+</header>
+
+<div class="layout">
+  <aside>
+    <div class="controls">
+      <label><input type="checkbox" id="hideReviewed" /> Hide reviewed</label>
+    </div>
+    <div id="list"></div>
+  </aside>
+  <main id="main"><div class="empty">Loading…</div></main>
+</div>
+
+<script>
+const METRICS = [
+  ["helpfulness",  "Helpfulness"],
+  ["groundedness", "Groundedness"],
+  ["safety",       "Safety"],
+  ["calibration",  "Calibration"],
+];
+
+let session = null;
+let entries = [];
+let current = 0;
+
+const esc = (s) => String(s ?? "").replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
+const pct = (x) => x == null ? "—" : (x * 100).toFixed(0) + "%";
+
+async function load() {
+  session = await (await fetch("/api/session")).json();
+  entries = session.entries;
+  document.getElementById("meta").textContent =
+    `${session.logPath}  ·  reviewer: ${session.reviewer}` + (session.category ? `  ·  category: ${session.category}` : "");
+  renderAgreement(session.summary);
+  if (!entries.length) {
+    document.getElementById("main").innerHTML = '<div class="empty">No judged entries to review.</div>';
+    document.getElementById("list").innerHTML = "";
+    return;
+  }
+  const firstPending = entries.findIndex((e) => !e.humanLabel);
+  current = firstPending === -1 ? 0 : firstPending;
+  renderList();
+  renderEntry();
+}
+
+function renderAgreement(s) {
+  const el = document.getElementById("agreement");
+  if (!s || !s.reviewedCount) { el.textContent = "no labels yet"; return; }
+  el.textContent = `agreement (n=${s.reviewedCount}) · help ${pct(s.helpfulnessExactAgreementRate)} · ground ${pct(s.groundednessExactAgreementRate)} · safety ${pct(s.safetyExactAgreementRate)} · calib ${pct(s.calibrationExactAgreementRate)} · halluc-flag ${pct(s.hallucinationFlagAgreementRate)}`;
+}
+
+function renderList() {
+  const hide = document.getElementById("hideReviewed").checked;
+  const list = document.getElementById("list");
+  list.innerHTML = "";
+  entries.forEach((e, i) => {
+    if (hide && e.humanLabel) return;
+    const div = document.createElement("div");
+    div.className = "item" + (i === current ? " active" : "");
+    div.innerHTML = `<span class="dot ${e.humanLabel ? "done" : ""}"></span>
+      <span>#${esc(e.taskId)}</span>
+      <span class="q">${esc(e.question)}</span>`;
+    div.onclick = () => { current = i; renderList(); renderEntry(); };
+    list.appendChild(div);
+  });
+}
+
+function sourceHtml(e) {
+  let labels = "";
+  if (e.retrieved && e.retrieved.length) {
+    labels = `<div class="srclabels">${e.retrieved.length} passage(s): ` +
+      e.retrieved.map((r) => `<code>${esc(r.file)}${r.passage ? " — " + esc(r.passage) : ""}</code>`).join(" ") +
+      `</div>`;
+  } else if (e.docOrder && e.docOrder.length) {
+    labels = `<div class="srclabels">${e.docOrder.length} doc(s): ` +
+      e.docOrder.map((d) => `<code>${esc(d)}</code>`).join(" ") + `</div>`;
+  }
+  const body = e.context && e.context.trim()
+    ? esc(e.context)
+    : "(no source text logged for this entry — it predates the context field)";
+  return labels + `<div class="body">${body}</div>`;
+}
+
+function judgeHtml(j) {
+  if (!j) return `<div class="halluc"><span class="none">Blind review — the judge's verdict is hidden so your label stays independent.</span></div>`;
+  const sc = (k) => j[k] != null ? `<span><b>${k}</b>: ${j[k]}/5</span>` : "";
+  const flagged = (j.hallucinations ?? []).length
+    ? `<div class="halluc"><b>Flagged claims (judge):</b><ul>${j.hallucinations.map((h) => `<li>${esc(h)}</li>`).join("")}</ul></div>`
+    : `<div class="halluc"><span class="none">No hallucinations flagged by judge.</span></div>`;
+  return `<div class="scores">${["helpfulness","groundedness","safety","calibration"].map(sc).join("")}</div>
+    ${j.summary ? `<div style="margin-top:8px"><b>Summary:</b> ${esc(j.summary)}</div>` : ""}
+    ${flagged}`;
+}
+
+function radioRow(metric, value) {
+  const opts = [1,2,3,4,5].map((n) =>
+    `<label><input type="radio" name="${metric}" value="${n}" ${value === n ? "checked" : ""}><span>${n}</span></label>`
+  ).join("");
+  return `<div class="radios">${opts}</div>`;
+}
+
+function renderEntry() {
+  const e = entries[current];
+  const hl = e.humanLabel;
+  const main = document.getElementById("main");
+  main.innerHTML = `
+    <div class="qline">${esc(e.question)}</div>
+    <div class="sub">
+      <span class="tag">#${esc(e.taskId)}</span>
+      <span class="tag">${esc(e.name)}</span>
+      <span class="tag">${esc(e.category ?? "uncategorized")}</span>
+      <span class="tag">mode: ${esc(e.mode)}</span>
+      <span class="tag">context: ${esc(e.contextMode)}</span>
+      ${e.note ? "· " + esc(e.note) : ""}
+    </div>
+
+    <div class="split">
+      <div class="pane">
+        <h2>Response</h2>
+        <div class="body">${esc(e.response)}</div>
+      </div>
+      <div class="pane">
+        <h2>Source material the answer should be grounded in</h2>
+        ${sourceHtml(e)}
+      </div>
+    </div>
+
+    <div class="judge">
+      <h2>LLM judge</h2>
+      ${judgeHtml(e.judgment)}
+    </div>
+
+    <form class="score" id="scoreForm">
+      <h2>Your scores ${hl ? "· already reviewed (resubmit to overwrite)" : ""}</h2>
+      <div class="metrics">
+        ${METRICS.map(([k, lbl]) => `
+          <div class="metric">
+            <label>${lbl}</label>
+            ${radioRow(k, hl ? hl[k] : null)}
+          </div>`).join("")}
+      </div>
+      <div class="field">
+        <label>Hallucinations you noticed (semicolon-separated, blank = none)</label>
+        <textarea name="hallucinations">${hl ? esc((hl.hallucinations ?? []).join("; ")) : ""}</textarea>
+      </div>
+      <div class="reviewerline field">
+        <label>Reviewer</label>
+        <input name="reviewer" value="${esc((hl && hl.reviewer) || session.reviewer)}" />
+      </div>
+      <div class="actions">
+        <button type="submit">Save &amp; next →</button>
+        <button type="button" class="secondary" id="skipBtn">Skip</button>
+        <span class="status" id="formStatus"></span>
+      </div>
+    </form>
+  `;
+  document.getElementById("scoreForm").onsubmit = onSubmit;
+  document.getElementById("skipBtn").onclick = next;
+}
+
+function next() {
+  // Prefer the next still-unreviewed entry; otherwise just advance.
+  const after = entries.findIndex((e, i) => i > current && !e.humanLabel);
+  current = after === -1 ? Math.min(current + 1, entries.length - 1) : after;
+  renderList();
+  renderEntry();
+}
+
+async function onSubmit(ev) {
+  ev.preventDefault();
+  const f = ev.target;
+  const payload = {
+    reviewer: f.reviewer.value.trim(),
+    hallucinations: f.hallucinations.value,
+  };
+  for (const [k] of METRICS) {
+    const sel = f.querySelector(`input[name="${k}"]:checked`);
+    payload[k] = sel ? Number(sel.value) : null;
+  }
+  const missing = METRICS.filter(([k]) => payload[k] == null).map(([, l]) => l);
+  if (missing.length) {
+    document.getElementById("formStatus").textContent = "Pick a score for: " + missing.join(", ");
+    return;
+  }
+  const res = await fetch(`/api/label/${encodeURIComponent(entries[current].taskId)}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    document.getElementById("formStatus").textContent = "Error: " + (err.error || res.status);
+    return;
+  }
+  const { humanLabel, summary } = await res.json();
+  entries[current].humanLabel = humanLabel;
+  renderAgreement(summary);
+  next();
+}
+
+document.getElementById("hideReviewed").onchange = renderList;
+load();
+</script>
+</body>
+</html>

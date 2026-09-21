@@ -1,0 +1,23 @@
+node_modules/
+.env
+.claude/
+logs/
+*.log
+rag/storage/
+users/*.json
+CLAUDE.md
+thesis/
+digital-appendix/
+.idea/
+
+# thesis-only evidence/tooling — kept locally, not part of the public repo
+docs/results.md
+docs/reliability-testing.md
+docs/testing-procedure.md
+docs/system-design.md
+docs/campaign-runbook.md
+docs/verification/
+docs/usability-study/
+scripts/
+run-campaign.bat
+run-campaign-groq.bat

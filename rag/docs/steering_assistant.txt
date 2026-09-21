@@ -1,0 +1,95 @@
+# Steering Assistant
+
+## PRINCIPLE
+The Steering Assistant helps keep the vehicle in the lane by executing supporting steering movements, for instance when driving in a curve.
+
+## GENERAL INFORMATION
+Depending on the speed, the system orients itself according to the lane markings or vehicles in front. Sensors on the steering wheel detect whether the steering wheel is being touched.
+
+## SAFETY INFORMATION
+The system cannot serve as a substitute for the driver's personal judgment in assessing the traffic situation. Based on the limits of the system, it cannot independently react to all traffic situations. Adjust driving style to traffic conditions. Watch traffic closely and actively intervene where appropriate.
+
+## SENSORS
+The system is controlled by the following sensors:
+- Cameras behind the windshield
+- Front radar sensor
+- Radar sensors, side, front
+- Radar sensors, side, rear
+
+## FUNCTIONAL REQUIREMENTS
+- Speed below 130 mph / 210 km/h
+- Sufficient lane width
+- Above approx. 43 mph / 70 km/h: lane marking on both sides is detected
+- Below approx. 43 mph / 70 km/h: lane marking on both sides or a vehicle driving ahead is detected
+- Hands on the steering wheel rim
+- Wide curves
+- Drive in the center of the lane
+- Turn signal switched off
+- Sensor system calibration process is complete
+- Cruise control with distance control active
+- Safety belt on the driver's side fastened
+- Forward Collision Warning active
+- Pedestrian Warning active
+- Side Collision Warning active
+
+## TURNING ON
+1. Press the steering/traffic jam assistant button on the steering wheel.
+2. Adjust settings if necessary.
+- Steering wheel symbol lights up gray: system is on standby, does not manipulate steering.
+- System activates automatically once all functional conditions are fulfilled.
+- Steering wheel symbol lights up green: system is active.
+When the system is switched on, Pedestrian Warning with City Collision Mitigation and side collision mitigation are also active.
+
+## TURNING OFF
+Press the button on the steering wheel. The indicator goes out. The system stops performing supportive steering wheel movements.
+
+## AUTOMATIC INTERRUPTION
+The system interrupts supporting steering movements automatically in the following situations:
+- Speed exceeds 130 mph / 210 km/h
+- Steering wheel is released
+- Driver applies the brakes
+- Driver manipulates steering
+- Vehicle leaves its lane
+- Turn signal is switched on
+- Lane is too narrow
+- Lane boundary not detected for a certain period and no vehicle is driving ahead
+- Active Cruise Control is interrupted
+- Driver's safety belt is unfastened
+After interruption, the system returns to standby and reactivates automatically once all conditions are fulfilled.
+
+## INSTRUMENT CLUSTER DISPLAYS
+- Gray steering wheel symbol: system is on standby
+- Green steering wheel symbol: system is active, supporting lane keeping
+- Yellow flashing steering wheel symbol: lane marking driven over; steering wheel may vibrate
+- Yellow steering wheel symbol + signal: system interruption is imminent
+- Red blinking steering wheel symbol + signal: system is switching off
+- Yellow steering wheel symbol (no hands detected): hands not on steering wheel, system still active
+- Red steering wheel symbol + signal (no hands detected): system interruption is imminent; system may reduce speed to a standstill
+
+## STEERING WHEEL LED DISPLAYS
+Two LED lights above the buttons illuminate:
+- Yellow: system interruption is imminent
+- Red: system will be deactivated
+Steering wheel LED feedback can be toggled via: CAR > Settings > Driver Assistance > Steering Wheel Feedback > Light elements
+
+## HEAD-UP DISPLAY
+All system information can also be displayed in the Head-up Display.
+
+## SYSTEM LIMITS
+
+### Hands on the steering wheel
+Sensors cannot detect hand-steering wheel contact in the following situations:
+- Driving with gloves
+- Protective covers on the steering wheel
+
+### Narrow lanes
+The system cannot be activated or effectively used in:
+- Construction areas
+- Situations with automatic formation of emergency lanes (depending on equipment)
+- Within city limits
+
+### Weather
+Under unfavorable weather or light conditions:
+- Poorer recognition of vehicles and lane markings
+- Short-term interruptions for already-recognized vehicles
+Drive attentively and react to current traffic conditions. Intervene actively by braking, steering, or evading if necessary.

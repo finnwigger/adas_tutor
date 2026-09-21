@@ -1,0 +1,79 @@
+# ACTIVE CRUISE CONTROL (ACC) WITH STOP&GO
+
+## SYSTEM PRINCIPLE
+Active Cruise Control maintains a desired speed and a set distance to the vehicle ahead. The vehicle accelerates or brakes automatically. If the vehicle ahead stops and restarts briefly, the system can detect and respond within system limits.
+
+## SAFETY INFORMATION
+- Driver Responsibility: The system does not substitute for personal judgment and cannot react to all traffic situations.
+- Unsecured Vehicle: Always secure the vehicle against rolling before exiting.
+- Speed Differences: High risk when approaching much slower, swerving, or stationary vehicles.
+- Late Deceleration: System limits may cause late braking; the driver must maintain safety distance manually if necessary.
+
+## CONTROLS AND BUTTONS
+- I/O Button: Switches Cruise Control on/off.
+- MODE Button: Selects between assisted driving functions.
+- SET Button: Stores the current speed.
+- RES/CNCL: Resumes an interrupted cruise control or pauses the system.
+- Distance Buttons (Up/Down): Adjusts the distance to the vehicle ahead.
+- Rocker Switch:
+  - Tap to resistance: +/- 1 mph (1 km/h).
+  - Press past resistance: +/- 5 mph (10 km/h).
+
+## OPERATIONAL RANGE AND SENSORS
+- Sensors: Cameras behind the windshield and a front radar sensor.
+- Minimum Speed: 20 mph (30 km/h).
+- Maximum Speed: Limited by vehicle equipment.
+- Stationary Activation: The system can be activated while the vehicle is at a standstill.
+
+## SYSTEM STATES
+
+### TURNING ON
+- Press the I/O button. Current speed is stored.
+- DSC (Dynamic Stability Control) is switched on automatically if needed.
+
+### TURNING OFF
+- Press the I/O button. Stored speed is deleted.
+- If stationary, the brake pedal must be depressed to turn off.
+
+### MANUAL INTERRUPTION
+- Press the CNCL button.
+
+### AUTOMATIC INTERRUPTION
+- Driver applies the brakes.
+- Selector lever is moved out of Drive (D).
+- DTC is activated or DSC is deactivated/intervenes.
+- Driver's door or seatbelt is opened while stationary.
+- Radar/Sensor detection is impaired (e.g., heavy rain, dirt, or snow).
+- Extended stationary period after being braked to a stop by the system.
+
+### CONTINUING CRUISE CONTROL (RESUME)
+- Press the RES button to call up the stored speed.
+- Warning: Avoid resuming if current speed is significantly lower than stored speed to prevent sudden acceleration.
+- Memory Deletion: Stored speed is wiped if the system or ignition is turned off.
+
+### DISTANCE CONTROL
+- Manual Adjustment: Cycle through distance stages (1 through 4) using steering wheel buttons.
+- Automatic Adaptation: Can be enabled in "Driver Assistance" > "Speed Limit Assistance" to adjust based on visibility/traffic.
+- Mode Swap: Press and hold the distance button to toggle between cruise control with and without distance control.
+
+## VISUAL DISPLAYS
+
+### SPEEDOMETER MARKING
+- Green: System active; indicates set speed.
+- Grey: System interrupted; indicates stored speed.
+- None: System off.
+
+### INDICATOR LIGHTS
+- Green Icon: Vehicle detected ahead.
+- Flashing Green: Vehicle in front has driven off.
+- Flashing Red + Signal: Immediate intervention required (Brake/Evasive maneuver).
+
+### HEAD-UP DISPLAY
+- Shows set speed icon and distance warnings (too short) when traveling over 40 mph (70 km/h).
+
+## SYSTEM LIMITS AND LIMITATIONS
+- Sensor Limits: Limited detection of motorcycles or vehicles merging suddenly.
+- No Deceleration: Does not react to pedestrians, cross traffic, oncoming traffic, or red lights.
+- Cornering: System may misidentify vehicles in adjacent lanes as being ahead during curves.
+- Driving Off: Vehicle may not automatically drive off on steep inclines or over bumps.
+- Drive Power: Speed may drop on uphill grades if engine power is insufficient. ECO PRO mode allows more speed fluctuation for efficiency.

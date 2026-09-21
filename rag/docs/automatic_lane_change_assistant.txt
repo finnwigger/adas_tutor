@@ -1,0 +1,36 @@
+# Automatic Lane Change Assistant
+
+## PRINCIPLE
+The system additionally supports the driver when changing lanes on multilane roads.
+
+## GENERAL INFORMATION
+The system uses the sensors of the Steering and Lane Control Assistant.
+
+## SAFETY INFORMATION
+The system cannot serve as a substitute for the driver's personal judgment in assessing the traffic situation. It cannot independently react to all traffic situations. Adjust driving style to traffic conditions. Watch traffic closely and actively intervene where appropriate. The notices for the Steering and Lane Control Assistant also apply.
+
+## FUNCTIONAL REQUIREMENTS
+- All functional requirements of the Steering and Traffic Jam Assistant are fulfilled
+- Driving on a road without pedestrians or cyclists and with physical barriers to oncoming traffic, such as crash barriers
+- Lane markings have been detected
+- Maximum speed approx. 110 mph / 180 km/h
+- Minimum speed is country-specific
+
+## ENABLING/DISABLING
+CAR > Settings > Driver Assistance > (if necessary) Driving > Steering Assistance > Automatic Lane Change
+
+## CHANGING LANES
+1. Ensure that the traffic situation permits a lane change.
+2. Press the turn signal lever in the required direction to the pressure point briefly.
+A supporting steering movement in the required direction can be detected a short time later. After the lane change, the system helps keep the vehicle in the new lane.
+
+## CANCELING A LANE CHANGE
+The lane change can be canceled by steering in the opposite direction.
+
+## INSTRUMENT CLUSTER DISPLAYS
+- Green steering wheel symbol + green arrow: system is carrying out a lane change
+- Green steering wheel symbol + gray lane marking line: lane change request detected, lane change not currently possible
+- Green steering wheel symbol + gray arrow (country-dependent): lane change not possible, functional requirements not met
+
+## SYSTEM LIMITS
+The limits of the Steering and Lane Control Assistant system apply.

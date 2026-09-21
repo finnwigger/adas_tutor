@@ -1,0 +1,64 @@
+# MANUAL SPEED LIMITER
+
+## PRINCIPLE
+The system can be used to set a speed limit, for instance to prevent the vehicle from exceeding speed limits.
+
+## GENERAL INFORMATION
+- Minimum speed limit: 20 mph / 30 km/h.
+- The vehicle can be driven at any speed below the set speed limit.
+
+## CONTROLS OVERVIEW
+- LIM Button: System on/off.
+- SET Button: Store current speed as the limit.
+- Speed Limit Assistant Button: Accept suggested speed manually.
+- Rocker Switch: Change the speed limit value.
+
+## OPERATION
+
+### TURNING ON
+- Press the LIM button on the steering wheel.
+- Current speed is accepted as the limit.
+- If stationary or at low speeds, the limit is set to 20 mph / 30 km/h.
+- A marking in the speedometer indicates the set speed.
+- Note: DSC (Dynamic Stability Control) and COMFORT driving mode may be switched on automatically.
+
+### TURNING OFF
+- Press the LIM button on the steering wheel.
+- Automatic deactivation occurs when:
+  - The engine is switched off.
+  - Cruise control is switched on.
+  - Certain Driving Dynamics Control programs are activated.
+
+### INTERRUPTING
+- The system is interrupted when rolling backwards (in reverse gear or at idle).
+
+### CHANGING THE SPEED LIMIT
+- Use the rocker switch up or down:
+  - Press to the resistance point: +/- 1 mph or 1 km/h.
+  - Press past the resistance point: +/- 5 mph or 10 km/h.
+- Downhill driving: The vehicle is not actively braked; it may exceed the limit.
+- Reducing limit while driving: The vehicle coasts until it drops to the set speed.
+
+### EXCEEDING THE SPEED LIMIT
+- Intentional: Press the accelerator pedal all the way down (kick-down). No warning is issued.
+- Unintentional: A warning is issued if the speed limit is reached or exceeded without a kick-down.
+- Reactivation: The limit is automatically reactivated when speed drops below the set limit.
+
+### WARNINGS
+- Visual: Indicator light in the instrument cluster flashes.
+- Acoustic:
+  - Sounds if exceeded unintentionally.
+  - Sounds if the limit is reduced below current speed while driving.
+  - No signal sounds during intentional override (kick-down).
+
+## INSTRUMENT CLUSTER DISPLAYS
+
+### SPEEDOMETER MARKING
+- Green: System is active.
+- Grey: System is interrupted.
+- No marking: System is switched off.
+
+### INDICATOR LIGHT
+- On: System is switched on.
+- Flashing: Set speed limit has been exceeded.
+- Grey: System has been interrupted.

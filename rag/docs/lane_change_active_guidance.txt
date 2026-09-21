@@ -1,0 +1,34 @@
+# Lane Change with Active Guidance (equipment-dependent)
+
+## PRINCIPLE
+The system assists the driver when lane changes are necessary to reach a navigation destination.
+
+## GENERAL INFORMATION
+The system uses the sensors of the Steering and Lane Control Assistant.
+
+## SAFETY INFORMATION
+The system cannot serve as a substitute for the driver's personal judgment. It cannot independently react to all traffic situations. Adjust driving style to traffic conditions. Watch traffic closely and actively intervene where appropriate. The notices for Active Cruise Control and the Steering and Lane Control Assistant also apply.
+
+## FUNCTIONAL REQUIREMENTS
+- Active Cruise Control is activated
+- Driving on a highway or highway-like road
+- Lane markings on the side of the desired lane change are detected
+- Navigation system guidance is activated
+- Adaptation to the course of the route is activated
+- Function must be available in the country in which the vehicle is driven
+
+## HOW IT WORKS
+1. When one or more lane changes are required to reach a navigation destination, the system prepares for the lane change by identifying a suitable gap in traffic on the next lane.
+2. When a gap is detected, speed is adapted so the vehicle aligns with the opening.
+3. A Check Control message indicates a lane change suggestion. When Steering Assistant is active, a steering intervention toward the relevant lane may occur.
+4. When the traffic situation permits, the driver can steer into the next lane. If Automatic Lane Change Assistant is equipped, it can be started by operating the turn signal after the Check Control message is displayed.
+
+## INSTRUMENT CLUSTER DISPLAY
+- Lane change suggestion displayed with a green checkmark indicating the active function.
+Depending on equipment and national-market version, the traffic situation is displayed in the Assisted Driving View.
+
+## ENABLING ROUTE ADAPTATION
+CAR > Settings > Driver Assistance > (if necessary) Driving > Speed Limit Assistance > "Adjust to route" or "Automatically adjust speed to route"
+
+## SYSTEM LIMITS
+The limits of the Active Cruise Control and Steering and Lane Control Assistant systems apply.

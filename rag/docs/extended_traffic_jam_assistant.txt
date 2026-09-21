@@ -1,0 +1,47 @@
+# Extended Traffic Jam Assistant
+
+## PRINCIPLE
+Extended Traffic Jam Assistant supports the driver with vehicle control in traffic jam situations. Supporting steering movements take place without the driver actively steering.
+
+## GENERAL INFORMATION
+The system uses the sensors of the Steering and Lane Control Assistant.
+
+## SAFETY INFORMATION
+The system cannot serve as a substitute for the driver's personal judgment in assessing the traffic situation. It cannot independently react to all traffic situations. Adjust driving style to traffic conditions. Watch the traffic situation closely, be ready to take over steering and braking at any time, and actively intervene where appropriate. State laws differ and the use of this function may violate the law. Before use, check your state and local laws. The notices for the Steering and Lane Control Assistant also apply.
+
+## FUNCTIONAL REQUIREMENTS
+- All functional requirements of the Steering and Traffic Jam Assistant are fulfilled
+- The Steering and Traffic Jam Assistant is active
+- Function is only available on certain street types, e.g. freeways
+- Road without pedestrians or cyclists
+- Sufficient lane width
+- Lane markings and a vehicle driving ahead are detected
+- Speed less than approx. 40 mph / 60 km/h
+- Driver Attention Camera detects that the driver is paying attention to traffic
+- Function must be available in the country in which the vehicle is driven
+
+## TURNING ON
+As soon as all functional requirements are met, Extended Traffic Jam Assistant is displayed as an additional icon in the toolbar at the bottom of the instrument cluster. Select Extended Traffic Jam Assistant with the button on the steering wheel.
+- The icon is shown in green
+- Two green LED lights illuminate on the steering wheel
+- The indicator light in the instrument cluster is shown in green
+The system begins to assist the driver with vehicle control.
+
+## INSTRUMENT CLUSTER DISPLAYS
+- Green indicator light: system is active
+- White indicator light: system is ready
+- Gray indicator light: system has been interrupted
+
+## STEERING WHEEL LED DISPLAYS
+Two LED lights above the buttons illuminate:
+- Green: system is active
+- Yellow: system will be interrupted
+- Red: system will be deactivated
+
+## SYSTEM LIMITS
+The limits of the Steering and Lane Control Assistant apply.
+
+### Driver Attention Camera
+Always monitor traffic conditions. The Driver Attention Camera detects whether the driver is paying attention to traffic. It may not be fully functional in the following situations:
+- When the Driver Attention Camera is covered by the steering wheel
+- With sunglasses with high protection from infrared light

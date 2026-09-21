@@ -1,0 +1,87 @@
+# GENERAL VEHICLE TECHNICAL REFERENCE
+
+## ENGINE AND POWERTRAIN
+- Available engines: 2.0L turbocharged inline-4 (48V mild-hybrid), 3.0L turbocharged inline-6, 4.4L twin-turbo V8.
+- Compression ratio: 10.2:1 (2.0L), 9.8:1 (3.0L), 9.5:1 (4.4L).
+- Fuel system: high-pressure direct injection, up to 350 bar rail pressure.
+- Recommended fuel: 91 RON premium unleaded minimum; E10 compatible.
+- Engine oil: 0W-20 synthetic, capacity 5.7 qt (2.0L), 7.4 qt (3.0L), 8.9 qt (4.4L) including filter.
+- Timing chain (not a belt) rated for the life of the vehicle under normal use; inspect tensioner at 100,000 mi / 160,000 km.
+- Spark plug replacement interval: 60,000 mi / 100,000 km (iridium-tipped).
+
+## TRANSMISSION AND DRIVETRAIN
+- 8-speed torque-converter automatic (inline-4, inline-6) or 8-speed dual-clutch (V8 performance trim).
+- Torque converter lockup engages above 2nd gear under light throttle to reduce slip losses.
+- Transmission fluid: manufacturer-spec ATF, service interval 60,000 mi / 100,000 km under normal duty, halved under towing or track use.
+- Dual-clutch variant uses a separate clutch oil cooler; check fluid level only with engine at operating temperature and transmission in neutral.
+- All-wheel-drive transfer case default torque split: 40% front / 60% rear, electronically variable 0-100% to either axle within approximately 100 ms.
+- Rear differential: open by default; electronically controlled limited-slip available as an option, max locking torque 1,200 Nm.
+
+## SUSPENSION AND RIDE
+- Front: MacPherson strut, aluminum lower control arms.
+- Rear: multi-link, five links per side.
+- Standard steel coil springs; adaptive air suspension optional, ride height adjustable across 4 preset levels (Access, Normal, Sport, Off-Road), ±35 mm from standard height.
+- Adaptive dampers (where equipped) update valving every 2 ms based on wheel accelerometer input; three driver-selectable modes (Comfort, Normal, Sport).
+- Front anti-roll bar: 26 mm hollow; rear: 18 mm solid.
+- Subframe-to-body mounting bolts torqued to 175 Nm plus 90° additional turn; always replace with new bolts after removal.
+
+## BRAKING HARDWARE
+- Front brakes: ventilated discs, 360 mm diameter, 4-piston fixed aluminum calipers.
+- Rear brakes: ventilated discs, 330 mm diameter, single-piston floating calipers.
+- Brake fluid: DOT 4 low-viscosity, full flush every 2 years regardless of mileage.
+- Pad wear sensors are wired on the front axle only; rear pad wear is estimated by the vehicle's onboard mileage model.
+- Parking brake: electric, integrated into the rear caliper pistons; automatic release on moving off is a separate mechanical/electrical function unrelated to any driver-assistance feature.
+- Brake pad compound: ceramic-composite front, semi-metallic rear; typical service life 30,000-45,000 mi / 48,000-72,000 km depending on driving style.
+
+## WHEELS AND TIRES
+- Standard wheel size: 18-inch alloy, 5x114.3 bolt pattern.
+- Optional wheel sizes: 19-inch and 20-inch (reduced tire sidewall height and ride comfort).
+- Wheel bolt/nut torque: 140 Nm, star pattern.
+- Tire pressure (cold): 33 psi front, 36 psi rear at standard load; add 3 psi rear under full load or towing.
+- Tire load index/speed rating on standard trim: 91V; performance trim: 95Y.
+- Spare: temporary compact spare rated to 50 mph / 80 km/h maximum, or tire sealant/inflator kit depending on market.
+
+## 12V ELECTRICAL AND AUXILIARY BATTERY
+- Auxiliary 12V battery: absorbent glass mat (AGM), Group 94R, 800 cold cranking amps.
+- Alternator/DC-DC converter output: 220 A nominal.
+- Battery location: under rear cargo floor on 48V mild-hybrid variants, engine bay on others.
+- Fuse box: primary under-hood, secondary under driver's-side dash panel; refer to fuse box lid diagram for amperage per circuit.
+- Jump-starting: use the dedicated positive jump terminal under the hood, not the battery post directly, on models with the rear-mounted battery.
+
+## HVAC AND CLIMATE CONTROL
+- Refrigerant: R-1234yf, system charge 500-560 g depending on whether rear climate zone is fitted.
+- Cabin air filter: combined particulate/activated-carbon element, replace every 15,000 mi / 24,000 km or annually.
+- Compressor: electrically driven scroll-type on mild-hybrid variants (can operate with engine off), belt-driven on others.
+- Three-zone climate control optional; rear zone controlled from a panel in the center console rear armrest.
+
+## INFOTAINMENT AND CONNECTIVITY
+- Standard display: 10.2-inch touchscreen, 1920x720; optional 12.8-inch, 2160x960.
+- Audio: 8-speaker standard, 16-speaker/720W amplified premium system optional.
+- Bluetooth 5.3 with simultaneous dual-device pairing.
+- Two USB-C ports front, two rear, one dedicated to dashcam power (always-on, fused separately from ignition-switched circuits).
+- Smartphone mirroring supports both major platforms over USB or wireless connection; wireless mirroring requires the vehicle to be in Park.
+
+## BODY, PAINT AND CORROSION PROTECTION
+- Body structure: mixed steel/aluminum, aluminum hood and front fenders on all trims.
+- Cathodic electrocoat (e-coat) dip plus PVC underbody sealant for corrosion protection.
+- Paint process: e-coat, primer, basecoat, clearcoat; total dry film thickness approximately 100-120 microns.
+- Perforation corrosion warranty: 12 years, unlimited mileage, in most markets.
+- Panel gap specification: 4.0 mm ± 1.0 mm at all shut lines, checked at final assembly inspection.
+
+## FLUID CAPACITIES AND MAINTENANCE INTERVALS
+- Engine coolant capacity: 8.5 L (inline-4), 10.2 L (inline-6), 12.8 L (V8); coolant is a sealed-for-life formulation, inspect only, no scheduled flush under normal use.
+- Windshield washer fluid reservoir: 6.5 L, includes headlight washer supply where fitted.
+- Recommended service intervals: oil and filter every 10,000 mi / 16,000 km or 12 months; multi-point inspection at every service; brake fluid every 2 years; cabin/engine air filters annually.
+
+## TOWING AND PAYLOAD
+- Gross Vehicle Weight Rating (GVWR): 2,650 kg (sedan/wagon body), 2,950 kg (raised/off-road trim).
+- Gross Combined Weight Rating (GCWR): 5,200 kg with factory tow package.
+- Maximum tongue weight: 10% of actual trailer weight, not to exceed 160 kg.
+- Trailer wiring harness: standard 7-pin connector, 13-pin adapter available; harness includes a dedicated circuit for electric trailer brakes.
+- Payload capacity (passengers, cargo, and tongue weight combined): 520-610 kg depending on trim and options fitted.
+
+## SEATING AND INTERIOR
+- Front seats: 12-way power adjustment standard, 4-way lumbar; memory for 2 driver profiles optional.
+- Heated front seats: 3 levels, approximately 45W per seat pad at maximum setting; heated rear seats available as an option on select trims.
+- Upholstery options: cloth, leatherette, and perforated leather with ventilation (fan-assisted, 2-speed).
+- Panoramic sunroof: single-motor tilt-slide mechanism, pinch-protection sensor reverses motor direction if resistance is detected while closing.
